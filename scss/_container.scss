@@ -1,0 +1,5 @@
+.container {
+	display: grid;
+	grid-template-columns: [full-start] var(--gap) [center-start] 1fr [center-end] var(--gap) [full-end];
+	grid-template-rows: repeat(12, [row-start] min-content [row-end]);
+}

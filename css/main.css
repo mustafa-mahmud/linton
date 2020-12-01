@@ -1,0 +1,248 @@
+:root {
+  --gap: 2rem
+;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
+  height: 2000px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.para {
+  font-size: 1.7rem;
+  line-height: 24px;
+  margin-bottom: 2rem;
+}
+
+.para--light {
+  color: #222222;
+}
+
+.para--white {
+  color: #fff;
+}
+
+.para--default {
+  color: #1C6EA4;
+}
+
+/* =============CUSTOM SCROLLBAR=========== */
+body::-webkit-scrollbar {
+  width: 10px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #447ba0;
+  /* color of the scroll thumb */
+  /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
+}
+
+.btn-large {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  background-image: linear-gradient(to right, #1C6EA4, #447ba0);
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: 5px 5px 15px -5px #000000;
+  box-shadow: 5px 5px 15px -5px #000000;
+}
+
+.btn-large::before {
+  content: '';
+  position: absolute;
+  width: 6rem;
+  height: 15rem;
+  left: -4rem;
+  top: 0.5rem;
+  background-image: url(../images/telephone.svg);
+  background-repeat: no-repeat;
+  transform: rotate(20deg);
+  z-index: -1;
+}
+
+.btn-large span:first-child {
+  font-size: 1.8rem;
+  border-bottom: 1px solid #000000;
+}
+
+.btn-large span:last-child {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.btn-small {
+  background-color: #1C6EA4;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  color: #f4f4f4;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .btn-small {
+    align-self: flex-start;
+  }
+}
+
+.btn-small img {
+  width: 3.5rem;
+  margin-right: 1rem;
+  margin-left: 5px;
+}
+
+.btn-small span {
+  font-size: 2.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [full-start] var(--gap) [center-start] 1fr [center-end] var(--gap) [full-end];
+  grid-template-rows: repeat(12, [row-start] min-content [row-end]);
+}
+
+.header {
+  grid-column: full-start/full-end;
+  grid-row: row-start 1/row-end 1;
+  display: grid;
+  grid-template-columns: var(--gap) [center-start] 1fr [center-end] var(--gap);
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header__container {
+  grid-column: center-start/center-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .header__container {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header__logo img {
+  width: 17rem;
+}
+
+.hero {
+  grid-column: full-start/full-end;
+  grid-row: row-start 2/row-end 2;
+  min-height: 90vh;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 10rem 0;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: var(--gap) [center-start] 1fr [center-end] var(--gap);
+}
+
+.hero__container {
+  grid-column: center-start/center-end;
+  display: grid;
+  justify-content: center;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.hero__info h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .hero__info h1 {
+    font-size: 5rem;
+    text-align: left;
+  }
+}
+
+.hero__info p {
+  width: 100%;
+}
+
+@media only screen and (min-width: 37.5em) {
+  .hero__info p {
+    width: 70%;
+  }
+}
+
+.hero__info h3 {
+  color: #447ba0;
+  font-size: 2.5rem;
+}
+
+.hero__info h3 i {
+  border-bottom: 2px solid #447ba0;
+}
+
+.hero__info ul li {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.hero__info ul li img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.hero__info ul li span {
+  font-size: 1.8rem;
+  color: #fff;
+  line-height: 1;
+  margin-top: 5px;
+}

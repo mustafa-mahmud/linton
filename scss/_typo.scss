@@ -1,0 +1,17 @@
+.para {
+	font-size: 1.7rem;
+	line-height: 24px;
+	margin-bottom: 2rem;
+
+	&--light {
+		color: #222222;
+	}
+
+	&--white {
+		color: #fff;
+	}
+
+	&--default {
+		color: $default-dark3
+	}
+}

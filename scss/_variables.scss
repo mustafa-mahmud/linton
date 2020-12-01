@@ -1,0 +1,13 @@
+:root {
+	--gap: 2rem
+}
+
+$default-color:#f4f4f4;
+$default-color2:#E08700;
+$default-dark3: #1C6EA4;
+$default-light4: #447ba0;
+
+//Break Points
+$bp-600:37.5em;
+
+@media only screen and (max-width: $bp-600) {}
